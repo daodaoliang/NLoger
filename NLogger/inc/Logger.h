@@ -20,25 +20,25 @@
 #include <QDateTime>
 
 // Local
-#include "CuteLogger_global.h"
+#include "NLogger_global.h"
 class AbstractAppender;
 class Logger;
-CUTELOGGERSHARED_EXPORT Logger* loggerInstance();
+NLOGGERSHARED_EXPORT Logger* loggerInstance();
 #define logger loggerInstance()
 
-#define LOG_TRACE            CuteMessageLogger(loggerInstance(), Logger::Trace,   __FILE__, __LINE__, Q_FUNC_INFO).write
-#define LOG_DEBUG            CuteMessageLogger(loggerInstance(), Logger::Debug,   __FILE__, __LINE__, Q_FUNC_INFO).write
-#define LOG_INFO             CuteMessageLogger(loggerInstance(), Logger::Info,    __FILE__, __LINE__, Q_FUNC_INFO).write
-#define LOG_WARNING          CuteMessageLogger(loggerInstance(), Logger::Warning, __FILE__, __LINE__, Q_FUNC_INFO).write
-#define LOG_ERROR            CuteMessageLogger(loggerInstance(), Logger::Error,   __FILE__, __LINE__, Q_FUNC_INFO).write
-#define LOG_FATAL            CuteMessageLogger(loggerInstance(), Logger::Fatal,   __FILE__, __LINE__, Q_FUNC_INFO).write
+#define LOG_TRACE            NMessageLogger(loggerInstance(), Logger::Trace,   __FILE__, __LINE__, Q_FUNC_INFO).write
+#define LOG_DEBUG            NMessageLogger(loggerInstance(), Logger::Debug,   __FILE__, __LINE__, Q_FUNC_INFO).write
+#define LOG_INFO             NMessageLogger(loggerInstance(), Logger::Info,    __FILE__, __LINE__, Q_FUNC_INFO).write
+#define LOG_WARNING          NMessageLogger(loggerInstance(), Logger::Warning, __FILE__, __LINE__, Q_FUNC_INFO).write
+#define LOG_ERROR            NMessageLogger(loggerInstance(), Logger::Error,   __FILE__, __LINE__, Q_FUNC_INFO).write
+#define LOG_FATAL            NMessageLogger(loggerInstance(), Logger::Fatal,   __FILE__, __LINE__, Q_FUNC_INFO).write
 
-#define LOG_CTRACE(category)   CuteMessageLogger(loggerInstance(), Logger::Trace,   __FILE__, __LINE__, Q_FUNC_INFO, category).write()
-#define LOG_CDEBUG(category)   CuteMessageLogger(loggerInstance(), Logger::Debug,   __FILE__, __LINE__, Q_FUNC_INFO, category).write()
-#define LOG_CINFO(category)    CuteMessageLogger(loggerInstance(), Logger::Info,    __FILE__, __LINE__, Q_FUNC_INFO, category).write()
-#define LOG_CWARNING(category) CuteMessageLogger(loggerInstance(), Logger::Warning, __FILE__, __LINE__, Q_FUNC_INFO, category).write()
-#define LOG_CERROR(category)   CuteMessageLogger(loggerInstance(), Logger::Error,   __FILE__, __LINE__, Q_FUNC_INFO, category).write()
-#define LOG_CFATAL(category)   CuteMessageLogger(loggerInstance(), Logger::Fatal,   __FILE__, __LINE__, Q_FUNC_INFO, category).write()
+#define LOG_CTRACE(category)   NMessageLogger(loggerInstance(), Logger::Trace,   __FILE__, __LINE__, Q_FUNC_INFO, category).write()
+#define LOG_CDEBUG(category)   NMessageLogger(loggerInstance(), Logger::Debug,   __FILE__, __LINE__, Q_FUNC_INFO, category).write()
+#define LOG_CINFO(category)    NMessageLogger(loggerInstance(), Logger::Info,    __FILE__, __LINE__, Q_FUNC_INFO, category).write()
+#define LOG_CWARNING(category) NMessageLogger(loggerInstance(), Logger::Warning, __FILE__, __LINE__, Q_FUNC_INFO, category).write()
+#define LOG_CERROR(category)   NMessageLogger(loggerInstance(), Logger::Error,   __FILE__, __LINE__, Q_FUNC_INFO, category).write()
+#define LOG_CFATAL(category)   NMessageLogger(loggerInstance(), Logger::Fatal,   __FILE__, __LINE__, Q_FUNC_INFO, category).write()
 
 #define LOG_TRACE_TIME  LoggerTimingHelper loggerTimingHelper(loggerInstance(), Logger::Trace, __FILE__, __LINE__, Q_FUNC_INFO); loggerTimingHelper.start
 #define LOG_DEBUG_TIME  LoggerTimingHelper loggerTimingHelper(loggerInstance(), Logger::Debug, __FILE__, __LINE__, Q_FUNC_INFO); loggerTimingHelper.start
@@ -66,7 +66,7 @@ CUTELOGGERSHARED_EXPORT Logger* loggerInstance();
 
 
 class LoggerPrivate;
-class CUTELOGGERSHARED_EXPORT Logger
+class NLOGGERSHARED_EXPORT Logger
 {
   Q_DISABLE_COPY(Logger)
 
@@ -114,12 +114,12 @@ class CUTELOGGERSHARED_EXPORT Logger
 };
 
 
-class CUTELOGGERSHARED_EXPORT CuteMessageLogger
+class NLOGGERSHARED_EXPORT NMessageLogger
 {
-  Q_DISABLE_COPY(CuteMessageLogger)
+  Q_DISABLE_COPY(NMessageLogger)
 
   public:
-    Q_DECL_CONSTEXPR CuteMessageLogger(Logger* l, Logger::LogLevel level, const char* file, int line, const char* function)
+    Q_DECL_CONSTEXPR NMessageLogger(Logger* l, Logger::LogLevel level, const char* file, int line, const char* function)
         : m_l(l),
           m_level(level),
           m_file(file),
@@ -128,7 +128,7 @@ class CUTELOGGERSHARED_EXPORT CuteMessageLogger
           m_category(0)
     {}
 
-    Q_DECL_CONSTEXPR CuteMessageLogger(Logger* l, Logger::LogLevel level, const char* file, int line, const char* function, const char* category)
+    Q_DECL_CONSTEXPR NMessageLogger(Logger* l, Logger::LogLevel level, const char* file, int line, const char* function, const char* category)
         : m_l(l),
           m_level(level),
           m_file(file),
@@ -161,7 +161,7 @@ class CUTELOGGERSHARED_EXPORT CuteMessageLogger
 };
 
 
-class CUTELOGGERSHARED_EXPORT LoggerTimingHelper
+class NLOGGERSHARED_EXPORT LoggerTimingHelper
 {
   Q_DISABLE_COPY(LoggerTimingHelper)
 

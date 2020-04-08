@@ -15,11 +15,11 @@
 #ifndef OUTPUTDEBUGAPPENDER_H
 #define OUTPUTDEBUGAPPENDER_H
 
-#include "CuteLogger_global.h"
+#include "NLogger_global.h"
 #include <AbstractStringAppender.h>
 
 
-class CUTELOGGERSHARED_EXPORT OutputDebugAppender : public AbstractStringAppender
+class NLOGGERSHARED_EXPORT OutputDebugAppender : public AbstractStringAppender
 {
   protected:
     virtual void append(const QDateTime& timeStamp, Logger::LogLevel logLevel, const char* file, int line,

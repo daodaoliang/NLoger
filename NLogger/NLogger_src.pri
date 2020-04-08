@@ -1,10 +1,10 @@
 INCLUDEPATH += $$PWD/inc/
 
 HEADERS += \
+    $$PWD/inc/NLogger_global.h \
     $$PWD/inc/RollingFileAppender.h \
     $$PWD/inc/Logger.h \
     $$PWD/inc/FileAppender.h \
-    $$PWD/inc/CuteLogger_global.h \
     $$PWD/inc/ConsoleAppender.h \
     $$PWD/inc/AbstractStringAppender.h \
     $$PWD/inc/AbstractAppender.h \

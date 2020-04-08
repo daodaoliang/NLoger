@@ -3,7 +3,7 @@ QT       -= gui
 TARGET =  NLogger
 TEMPLATE = lib
 
-DEFINES += CUTELOGGER_LIBRARY
+DEFINES += NLOGGER_LIBRARY
 
 # 引入源文件
 include($$PWD/NLogger_src.pri)

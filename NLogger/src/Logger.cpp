@@ -1088,7 +1088,7 @@ LoggerTimingHelper::~LoggerTimingHelper()
 }
 
 
-void CuteMessageLogger::write(const char* msg, ...) const
+void NMessageLogger::write(const char* msg, ...) const
 {
   va_list va;
   va_start(va, msg);
@@ -1097,13 +1097,13 @@ void CuteMessageLogger::write(const char* msg, ...) const
 }
 
 
-void CuteMessageLogger::write(const QString& msg) const
+void NMessageLogger::write(const QString& msg) const
 {
   m_l->write(m_level, m_file, m_line, m_function, m_category, msg);
 }
 
 
-QDebug CuteMessageLogger::write() const
+QDebug NMessageLogger::write() const
 {
   return m_l->write(m_level, m_file, m_line, m_function, m_category);
 }

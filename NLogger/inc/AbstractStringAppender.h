@@ -15,14 +15,14 @@
 #define ABSTRACTSTRINGAPPENDER_H
 
 // Local
-#include "CuteLogger_global.h"
+#include "NLogger_global.h"
 #include <AbstractAppender.h>
 
 // Qt
 #include <QReadWriteLock>
 
 
-class CUTELOGGERSHARED_EXPORT AbstractStringAppender : public AbstractAppender
+class NLOGGERSHARED_EXPORT AbstractStringAppender : public AbstractAppender
 {
   public:
     AbstractStringAppender();

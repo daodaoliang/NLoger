@@ -14,11 +14,11 @@
 #ifndef CONSOLEAPPENDER_H
 #define CONSOLEAPPENDER_H
 
-#include "CuteLogger_global.h"
+#include "NLogger_global.h"
 #include <AbstractStringAppender.h>
 
 
-class CUTELOGGERSHARED_EXPORT ConsoleAppender : public AbstractStringAppender
+class NLOGGERSHARED_EXPORT ConsoleAppender : public AbstractStringAppender
 {
   public:
     ConsoleAppender();

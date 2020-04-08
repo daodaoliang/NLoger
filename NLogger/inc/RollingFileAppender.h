@@ -2,7 +2,6 @@
 #define ROLLINGFILEAPPENDER_H
 
 #include <QDateTime>
-
 #include <FileAppender.h>
 
 /*!
@@ -19,7 +18,7 @@
  * (so no more than logFilesLimit recent log files exist in the directory at any moment).
  * \sa setDatePattern(DatePattern), setLogFilesLimit(int)
  */
-class CUTELOGGERSHARED_EXPORT RollingFileAppender : public FileAppender
+class NLOGGERSHARED_EXPORT RollingFileAppender : public FileAppender
 {
   public:
     /*!

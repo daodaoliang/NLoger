@@ -15,7 +15,7 @@
 #define FILEAPPENDER_H
 
 // Logger
-#include "CuteLogger_global.h"
+#include "NLogger_global.h"
 #include <AbstractStringAppender.h>
 
 // Qt
@@ -23,7 +23,7 @@
 #include <QTextStream>
 
 
-class CUTELOGGERSHARED_EXPORT FileAppender : public AbstractStringAppender
+class NLOGGERSHARED_EXPORT FileAppender : public AbstractStringAppender
 {
   public:
     FileAppender(const QString& fileName = QString());

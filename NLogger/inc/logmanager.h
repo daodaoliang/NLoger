@@ -6,9 +6,9 @@
 
 class ConsoleAppender;
 class RollingFileAppender;
-#include "CuteLogger_global.h"
+#include "NLogger_global.h"
 
-class CUTELOGGERSHARED_EXPORT LogManager
+class NLOGGERSHARED_EXPORT LogManager
 {
 public:
     explicit LogManager();
