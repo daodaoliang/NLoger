@@ -8,7 +8,6 @@ HEADERS += \
     $$PWD/inc/ConsoleAppender.h \
     $$PWD/inc/AbstractStringAppender.h \
     $$PWD/inc/AbstractAppender.h \
-    $$PWD/inc/SizeRollingAppender.h \
     $$PWD/inc/logmanager.h
 
 SOURCES += \
@@ -18,7 +17,6 @@ SOURCES += \
     $$PWD/src/ConsoleAppender.cpp \
     $$PWD/src/AbstractStringAppender.cpp \
     $$PWD/src/AbstractAppender.cpp \
-    $$PWD/src/SizeRollingAppender.cpp \
     $$PWD/src/logmanager.cpp
 
 win32 {
